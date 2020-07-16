@@ -7,8 +7,9 @@
     "start": "node index.js",
     "dev": "nodemon app.js"
   },
-  "engines": {
-    "node": "10.x"
+  "engine": {
+    "node": "10.x",
+    "npm": "6.x"
   },
   "keywords": [],
   "author": "",
