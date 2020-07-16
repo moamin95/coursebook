@@ -1,0 +1,61 @@
+<style>
+    #login{
+            color: white;
+            background-color: transparent;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-right: -50%;
+            transform: translate(-50%, -50%) 
+        }
+        h1{
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+        }
+        .form-group{
+            min-width: 300px;
+        }
+        .form-group:hover{
+            transform: scale(1.05);
+            transition: .6s all ease;
+        }
+        #loginBtn{
+            margin-top: 30px;
+            letter-spacing: 1.5px; 
+            color: white;
+            overflow: hidden;
+            border-radius: 40px;
+            transition: .6s all ease;
+        }
+        #loginBtn:hover{
+            transform: scale(1.1);
+        }
+        #registerHelp a, #passwordHelp a{
+            color: white;
+        }
+</style>
+<%- include ('partials/messages') %>
+<form id="login" action="/users/login" method="POST">
+    <h1>LOGIN</h1>
+    <fieldset>
+      <div class="form-group">
+        <label for="exampleInputEmail1">Email Address</label>
+        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Email" name="email">
+        <small id="registerHelp" class="form-text text-muted">Don't have an account? Sign up <a href="/users/register">here</a>.</small>
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Password</label>
+        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="password">
+        <small id="passwordHelp" class="form-text text-muted">Forgot your password? Change it <a href="/users/forgot">here</a>.</small>
+
+      </div>
+      <div class="form-check">
+        <label class="form-check-label">
+          <input class="form-check-input" type="checkbox" value="" >
+          Remember Me
+        </label>
+      </div>
+      <button id="loginBtn"type="submit" class="btn btn-primary">Sign In</button>
+    </fieldset>
+</form>
