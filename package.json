@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "npm run index"
+    "start": "node index.js",
+    "dev": "nodemon app.js"
   },
   "engine": {
     "node": "10.x",
