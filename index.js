@@ -15,11 +15,10 @@ const app = express();
 require('./config/passport')(passport);
 
 //DB CONFIG
-const db = require('./config/keys').MongoURI;
-
+require('./node_modules/dotenv/config');
 
 //CONNECT TO MONGO
-mongoose.connect(db, { 
+mongoose.connect(process.env.MONGO_SECRET, { 
     useNewUrlParser: true,
     useUnifiedTopology: true 
     })
