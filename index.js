@@ -15,7 +15,7 @@ const app = express();
 require('./config/passport')(passport);
 
 //DB CONFIG
-require('./node_modules/dotenv/config');
+
 
 //CONNECT TO MONGO
 mongoose.connect(process.env.MONGO_SECRET, { 
