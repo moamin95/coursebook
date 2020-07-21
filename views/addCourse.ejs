@@ -1,0 +1,60 @@
+<style>
+    #add{
+        color: white;
+        background-color: transparent;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-right: -50%;
+        transform: translate(-50%, -50%) 
+    }
+    h1{
+        text-align: center;
+        color: white;
+        margin-bottom: 40px;
+        margin-top: 100px;
+    }
+    .form-group{
+        min-width: 500px;
+    }
+    .form-group:hover{
+            transform: scale(1.05);
+            transition: .6s all ease;
+    }
+    #addBtn{
+            margin-top: 30px;
+            letter-spacing: 1.5px; 
+            color: white;
+            overflow: hidden;
+            border-radius: 40px;
+            transition: .6s all ease;
+    }
+    #addBtn:hover{
+            transform: scale(1.1);
+    }
+
+</style>
+<%- include ('partials/messages') %>
+<form id="add" action="/courses/add" method="POST">
+    <fieldset>
+        <h1>Add A Course</h1>
+        <div class="form-group">
+            <label for="exampleInputCourse1">Course Title</label>
+            <input type="course" class="form-control" id="exampleInputCourse1" aria-describedby="courseHelp" placeholder="Enter Course Name" name="title">
+            <small id="emailHelp" class="form-text text-muted">Course approval takes approximately 24-48 hours</small>
+        </div>
+        <div class="form-group">
+            <label for="exampleTextarea">Course Description</label>
+            <textarea class="form-control" id="exampleTextarea" rows="4" placeholder="Enter a Course Description" name="description"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="exampleInputCourse1">Technologies</label>
+            <input type="course" class="form-control" id="exampleInputCourse1" aria-describedby="courseHelp" placeholder="E.g. javascript, ruby, etc..." name="technologies">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputCourse1">Price</label>
+            <input type="course" class="form-control" id="exampleInputCourse1" aria-describedby="courseHelp" placeholder="$" name="price">
+        </div>
+        <button id="addBtn"type="submit" class="btn btn-primary">Add Course</button>
+    </fieldset>
+</form>

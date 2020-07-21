@@ -6,6 +6,7 @@
     <title>CourseBook&trade;</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.0/lux/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
@@ -15,7 +16,6 @@
         position: relative;
         min-height: 100vh;
         }
-
         footer{
         position: absolute;
         left: 32%;
@@ -26,6 +26,112 @@
         }
         footer span{
         color: black;
+        }
+        .bubble{
+        position: absolute;
+        bottom: 0;
+        width: 40px;
+        height: 40px;
+        background: white;
+        border-radius: 50%;
+        opacity: .5;
+        animation: flying 1s infinite ease-in;
+        }
+        .bubble:nth-child(1){
+            width: 40px;
+            height: 40px;
+            left: 10%;
+            animation-duration: 8s;
+        }
+        .bubble:nth-child(2){
+            width: 20px;
+            height: 20px;
+            left: 20%;
+            animation-duration: 5s;
+            animation-delay: 1s;
+        }
+        .bubble:nth-child(3){
+            width: 50px;
+            height: 50px;
+            left: 35%;
+            animation-duration: 10s;
+            animation-delay: 2s;
+        }
+        .bubble:nth-child(4){
+            width: 80px;
+            height: 80px;
+            left: 50%;
+            animation-duration: 7s;
+            animation-delay: 0s;
+        }
+        .bubble:nth-child(5){
+            width: 45px;
+            height: 45px;
+            left: 65%;
+            animation-duration: 8s;
+            animation-delay: 3ms;
+        }
+        .bubble:nth-child(6){
+            width: 35px;
+            height: 35px;
+            left: 55%;
+            animation-duration: 6s;
+            animation-delay: 1ms;
+        }
+        .bubble:nth-child(7){
+            width: 25px;
+            height: 25px;
+            left: 75%;
+            animation-duration: 7s;
+            animation-delay: 2ms;
+        }
+        .bubble:nth-child(8){
+            width: 80px;
+            height: 80px;
+            left: 80%;
+            animation-duration: 6s;
+            animation-delay: 1ms;
+        }
+        .bubble:nth-child(9){
+            width: 15px;
+            height: 15px;
+            left: 70%;
+            animation-duration: 9s;
+            animation-delay: 0ms;
+        }
+        .bubble:nth-child(10){
+            width: 50px;
+            height: 50px;
+            left: 85%;
+            animation-duration: 5s;
+            animation-delay: 3ms;
+        }
+        .bubble:nth-child(11){
+            width: 40px;
+            height: 40px;
+            left: 10%;
+            animation-duration: 8s;
+        }
+        .bubble:nth-child(12){
+            width: 20px;
+            height: 20px;
+            left: 20%;
+            animation-duration: 5s;
+            animation-delay: 1s;
+        }
+
+        @keyframes flying{
+            0%{
+                bottom: -100px;
+                transform: translateX(0);
+            }
+            50%{
+                transform: translateX(100px);
+            }
+            100%{
+                bottom: 1080px;
+                transform: translateX(-200px);
+            }
         }
         
     </style>
@@ -45,17 +151,17 @@
             <li class="nav-item">
               <a class="nav-link" href="/dashboard">Dashboard</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/shop">Shop</a>
-            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="true">Courses</a>
+                <div class="dropdown-menu" x-placement="bottom-start" style="position: absolute; transform: translate3d(0px, 37px, 0px); top: 0px; left: 0px; will-change: transform;">
+                  <a class="dropdown-item" href="/courses/shop">Shop Course</a>
+                  <a class="dropdown-item" href="/courses/add">Add Course</a>
+              </li>
             <li class="nav-item">
               <a class="nav-link" href="/users/login">Login</a>
             </li>
           </ul>
-          <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="text" placeholder="Search">
-            <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-          </form>
+          <i class="fa fa-shopping-cart" style="font-size:32px; float:right; margin-right: 10px;"></i>
         </div>
       </nav>
       <div class="container">
@@ -64,5 +170,19 @@
       <footer>
         &copy; 2020 CourseBook&trade; All Rights Reserved | Designed by <span>Mohammed Amin</span>
       </footer>
+      <div class="bubbles">
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+    </div>
 </body>
 </html>

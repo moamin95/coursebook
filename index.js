@@ -7,7 +7,7 @@ const flash = require('connect-flash');
 const session = require('express-session');
 const passport = require('passport');
 const path = require('path');
-
+const Sequelize = require('sequelize');
 
 const app = express();
 
@@ -60,6 +60,8 @@ app.use((req, res, next) => {
 //ROUTES
 app.use('/', require('./routes/index'));
 app.use('/users', require('./routes/users'));
+app.use('/courses', require('./routes/courses'));
+
 
 const PORT = process.env.PORT || 3000;
 
